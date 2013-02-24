@@ -4,7 +4,7 @@ package sac.discountstrategy;
  *
  * @author Stuart Caddell
  */
-public interface HasMinimumForDiscount {
+public interface MinimumQtyForDiscount {
     
     public void setMinimumQty(int minimumQtyForDiscount);
     
