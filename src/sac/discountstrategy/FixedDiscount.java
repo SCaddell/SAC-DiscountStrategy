@@ -5,7 +5,15 @@ package sac.discountstrategy;
  * @author Stuart Caddell
  */
 public class FixedDiscount implements DiscountStrategy {
-    private double discountRate = 0.00;
+    private double discountRate = 0.10;
+    
+    public FixedDiscount() {
+        discountRate = 0.10;
+    }
+    
+    public FixedDiscount(double discountRate) {
+        this.discountRate = discountRate;
+    }
     
     @Override
     public double getDiscount(int qty, double cost) {

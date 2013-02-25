@@ -8,7 +8,12 @@ public class QtyDiscount implements QtyBasedDiscountStrategy {
     private double discountRate = 0.00;
     private int minimumQty = 2;
 
-    public void QtyDiscount(double percentOff, int qty) {
+    
+    public QtyDiscount() {
+        discountRate = 0;
+        minimumQty = 2;
+    }
+    public QtyDiscount(double percentOff, int qty) {
         discountRate = percentOff;
         minimumQty = qty;
     }
