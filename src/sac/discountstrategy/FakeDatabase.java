@@ -4,7 +4,8 @@ package sac.discountstrategy;
  *
  * @author Stuart Caddell 
  */
-public class FakeDatabase {
+public class FakeDatabase implements ProductInformationRetrieval, 
+        CustomerInformationRetrieval {
     
     private Customer[] customers = {
 	        new Customer("100", "John Smith"),
@@ -21,6 +22,7 @@ public class FakeDatabase {
 
         // Just call this method to find a customer in the array by its id.
         // Returns null if not found.
+    @Override
 	    public final Customer findCustomer(final String custId) {
 	        // validation is needed
 	        Customer customer = null;
@@ -36,6 +38,7 @@ public class FakeDatabase {
 
         // Just call this method to find a product in the array by its id.
         // Returns null if not found.
+    @Override
 	    public final Product findProduct(final String prodId) {
 	        // validation is needed
 	        Product product = null;
