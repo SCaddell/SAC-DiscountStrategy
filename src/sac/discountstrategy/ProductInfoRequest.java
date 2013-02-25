@@ -9,21 +9,47 @@ package sac.discountstrategy;
  * @author Stuart - HP AMD 10
  */
 public class ProductInfoRequest {
-    private int quanity;                        // number of items purchased
-    private String productId;                   // mechandise product id
-    private String productDescription;          // general product description
-    private double unitPrice;                   // cost of single product
-    private double originalRetailPriceTotal;    // quanity * unit price
-    private double discount;                    // discount applied to line item
-    private double netPrice;                    // original price minus discount
     
-    public Product(String productId, int quanity) {
-        this.productId = productId;
-        this.quanity = quanity;
+    public Product productInfoRequest(String productId, int quanity) {
         
-        productDescription = prodDescription;
-        productPrice = prodPrice;
-        productDiscount = prodDiscnt;
+        ProductInfoRetrieval db = new FakeDatabase();
+        ProductRecord productRec = db.findProduct(productId);
+        
+        if(productRec != null) {
+            Product productDetails = new Product(productRec.getProductId(),
+                    quanity);
+            productDetails.setProductDescription(
+                    productRec.getProductDescription());
+            double unitPrice = productRec.getProductPrice();
+            productDetails.setUnitPrice(unitPrice);
+            productDetails.setOriginalRetailPriceTotal(quanity * unitPrice);
+            DiscountStrategy discount = productRec.getProductDiscountType();
+            productDetails.setDiscount(discount.getDiscount(
+                    quanity, unitPrice));
+            productDetails.setNetPrice(
+                    productDetails.getOriginalRetailPriceTotal()
+                    - productDetails.getDiscount());
+            return productDetails;
+        }
+        else {
+            Product productDetails = null;
+            return productDetails;
+        }
     }
-
 }
+    
+//    public Product(String productId, int quanity) {
+//        this.productId = productId;
+//        this.quanity = quanity;
+//        
+//        productDescription = prodDescription;
+//        productPrice = prodPrice;
+//        productDiscount = prodDiscnt;
+//    }
+//
+//}
+//// When adding an item to a sale you need to look up the item in the database
+//	// Here we use the prodId to find product in the above array
+//    public void addItemToSale(String prodId, int qty) {
+//		ProductInfoRetrieval db =  new FakeDatabase();
+//        Product product = db.findProduct(prodId);

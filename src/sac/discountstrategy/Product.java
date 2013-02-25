@@ -69,5 +69,12 @@ public class Product {
 
     public void setNetPrice(double netPrice) {
         this.netPrice = netPrice;
-    } 
+    }
+    
+    @Override
+    public String toString() {
+        String toStringInfo = "productId = " + productId
+                + "\nDecscription = " + productDescription;
+        return toStringInfo;
+    }
 }

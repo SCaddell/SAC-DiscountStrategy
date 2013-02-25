@@ -5,50 +5,48 @@ package sac.discountstrategy;
  * @author Stuart Caddell
  */
 public class ProductRecord {
-    private String productId;
-    private String productDescription;
-    private double productPrice;
-    private DiscountStrategy productDiscountType;
+    private String productRecId;
+    private String productRecDescription;
+    private double productRecPrice;
+    private DiscountStrategy productRecDiscountType;
 
     public ProductRecord(String prodId, String prodDescription, 
             double prodPrice, DiscountStrategy prodDiscntType) {
-        productId = prodId;
-        productDescription = prodDescription;
-        productPrice = prodPrice;
-        productDiscountType = prodDiscntType;
+        productRecId = prodId;
+        productRecDescription = prodDescription;
+        productRecPrice = prodPrice;
+        productRecDiscountType = prodDiscntType;
     }
     
     public String getProductId() {
-        return productId;
+        return productRecId;
     }
 
     public void setProductId(String productId) {
-        this.productId = productId;
+        this.productRecId = productId;
     }
 
     public String getProductDescription() {
-        return productDescription;
+        return productRecDescription;
     }
 
     public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+        this.productRecDescription = productDescription;
     }
 
     public double getProductPrice() {
-        return productPrice;
+        return productRecPrice;
     }
 
     public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
+        this.productRecPrice = productPrice;
     }
 
     public DiscountStrategy getProductDiscountType() {
-        return productDiscountType;
+        return productRecDiscountType;
     }
 
     public void setProductDiscountType(DiscountStrategy productDiscountType) {
-        this.productDiscountType = productDiscountType;
+        this.productRecDiscountType = productDiscountType;
     }
-    
-    
 }

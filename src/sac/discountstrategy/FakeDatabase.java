@@ -39,11 +39,11 @@ public class FakeDatabase implements ProductInfoRetrieval,
         // Just call this method to find a product in the array by its id.
         // Returns null if not found.
     @Override
-	    public final ProductRecord findProduct(final String prodId) {
+	    public final ProductRecord findProduct(final String productId) {
 	        // validation is needed
 	       ProductRecord product = null;
 	        for(ProductRecord p : products) {
-	            if(prodId.equals(p.getProductId())) {
+	            if(productId.equals(p.getProductId())) {
 	                product = p;
 	                break;
 	            }
