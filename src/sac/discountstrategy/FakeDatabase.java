@@ -4,7 +4,7 @@ package sac.discountstrategy;
  *
  * @author Stuart Caddell 
  */
-public class FakeDatabase implements ProductInformationRetrieval, 
+public class FakeDatabase implements ProductInfoRetrieval, 
         CustomerInformationRetrieval {
     
     private Customer[] customers = {
@@ -14,10 +14,10 @@ public class FakeDatabase implements ProductInformationRetrieval,
 	    };
 
         // Notice we assign a default discount strategy component object to each product
-	    Product[] products = {
-	        new Product("A101", "Baseball Hat", 19.95, new FixedDiscount(0.15)),
-	        new Product("B205", "Men's Dress Shirt", 35.50, new QtyDiscount(.10,5)),
-	        new Product("C222", "Women's Socks", 9.50, new NoDiscount())
+	    ProductRecord[] products = {
+	        new ProductRecord("A101", "Baseball Hat", 19.95, new FixedDiscount(0.15)),
+	        new ProductRecord("B205", "Men's Dress Shirt", 35.50, new QtyDiscount(.10,5)),
+	        new ProductRecord("C222", "Women's Socks", 9.50, new NoDiscount())
 	    };
 
         // Just call this method to find a customer in the array by its id.
@@ -39,10 +39,10 @@ public class FakeDatabase implements ProductInformationRetrieval,
         // Just call this method to find a product in the array by its id.
         // Returns null if not found.
     @Override
-	    public final Product findProduct(final String prodId) {
+	    public final ProductRecord findProduct(final String prodId) {
 	        // validation is needed
-	        Product product = null;
-	        for(Product p : products) {
+	       ProductRecord product = null;
+	        for(ProductRecord p : products) {
 	            if(prodId.equals(p.getProductId())) {
 	                product = p;
 	                break;
@@ -51,22 +51,16 @@ public class FakeDatabase implements ProductInformationRetrieval,
 
 	        return product;
 	    }
-	} // end of class
-	
-    
-	// When adding an item to a sale you need to look up the item in the database
-	// Here we use the prodId to find product in the above array
-    public void addItemToSale(String prodId, int qty) {
-		FakeDatabase db =  new FakeDatabase();
-        Product product = db.findProduct(prodId);
+   
+    public static void main(String[] args) {
+        ProductInfoRetrieval db =  new FakeDatabase();
+       ProductRecord product = db.findProduct("A101");
         
 		// if found, add the lineItem to the receipt
 		// but it's the receipt's job to do this!
         if(product != null) {
-            receipt.addLineItem(product, qty);
+            //receipt.addLineItem(product, qty);
+            System.out.println(product);
         }
-        
     }
-
-    
-}
+	} // end of class

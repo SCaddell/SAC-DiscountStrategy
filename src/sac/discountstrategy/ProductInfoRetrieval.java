@@ -8,7 +8,7 @@ package sac.discountstrategy;
  *
  * @author Stuart - HP AMD 10
  */
-public interface ProductInformationRetrieval {
+public interface ProductInfoRetrieval {
     
-    Product findProduct(final String prodId);
+    ProductRecord findProduct(final String prodId);
 }
