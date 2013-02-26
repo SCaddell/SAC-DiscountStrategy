@@ -6,37 +6,35 @@ package sac.discountstrategy;
  */
 public class LineItem {
     private int quanity;                        // number of items purchased
-    private String productId;                   // mechandise product id
-    private String productDescription;          // general product description
-    private double unitPrice;                   // cost of single product
+    private String itemId;                      // mechandise item id
+    private String itemDescription;             // general item description
+    private double unitPrice;                   // cost of single item
     private double originalRetailPriceTotal;    // quanity * unit price
     private double discount;                    // discount applied to line item
     private double netPrice;                    // original price minus discount
-    
-    public LineItem(int quanity, String productId) {
-        this.quanity = quanity;
-        this.productId = productId;
-        productDescription = null;
-        unitPrice = 0.00;
-        originalRetailPriceTotal = 0.00;
-        discount = 0.00;
-        netPrice = 0.00;
-    }
 
     public int getQuanity() {
         return quanity;
     }
 
-    public String getProductId() {
-        return productId;
+    public void setQuanity(int quanity) {
+        this.quanity = quanity;
     }
 
-    public String getProductDescription() {
-        return productDescription;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
     public double getUnitPrice() {
