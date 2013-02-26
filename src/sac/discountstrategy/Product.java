@@ -73,8 +73,14 @@ public class Product {
     
     @Override
     public String toString() {
-        String toStringInfo = "productId = " + productId
-                + "\nDecscription = " + productDescription;
+        String toStringInfo = "quanity = " + quanity
+                + "\nproductId = " + productId
+                + "\nDecscription = " + productDescription
+                + "\nunitPrice = " + unitPrice
+                + "\noriginalPrice = " + originalRetailPriceTotal
+                + "\ndiscount = " + discount
+                + "\nnetPrice = " + netPrice;  
+        
         return toStringInfo;
     }
 }

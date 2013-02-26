@@ -36,8 +36,15 @@ public class ProductInfoRequest {
             return productDetails;
         }
     }
+
+    public static void main(String[] args) {
+
+    ProductInfoRequest testRequest = new ProductInfoRequest();
+    Product testProduct = testRequest.productInfoRequest("A101", 10);
+    System.out.println(testProduct.toString());
+    }
+
 }
-    
 //    public Product(String productId, int quanity) {
 //        this.productId = productId;
 //        this.quanity = quanity;
