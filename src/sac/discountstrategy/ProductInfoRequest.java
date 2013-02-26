@@ -9,19 +9,22 @@ package sac.discountstrategy;
  * @author Stuart - HP AMD 10
  */
 public class ProductInfoRequest {
-    
+
     public Product productInfoRequest(String productId, int quanity) {
-        
+
         ProductInfoRetrieval db = new FakeDatabase();
         ProductRecord productRec = db.findProduct(productId);
-        
-        if(productRec != null) {
+
+        if (productRec != null) {
+            // instantiate a new Product
             Product productDetails = new Product(productRec.getProductId(),
                     quanity);
+            // move (copy) common ProductRecord fields to Product
             productDetails.setProductDescription(
                     productRec.getProductDescription());
             double unitPrice = productRec.getProductPrice();
             productDetails.setUnitPrice(unitPrice);
+            // calculate the Product fields not on the ProductRecord
             productDetails.setOriginalRetailPriceTotal(quanity * unitPrice);
             DiscountStrategy discount = productRec.getProductDiscountType();
             productDetails.setDiscount(discount.getDiscount(
@@ -30,8 +33,8 @@ public class ProductInfoRequest {
                     productDetails.getOriginalRetailPriceTotal()
                     - productDetails.getDiscount());
             return productDetails;
-        }
-        else {
+        } else {
+            // If product not found, return a null product
             Product productDetails = null;
             return productDetails;
         }
@@ -39,11 +42,10 @@ public class ProductInfoRequest {
 
     public static void main(String[] args) {
 
-    ProductInfoRequest testRequest = new ProductInfoRequest();
-    Product testProduct = testRequest.productInfoRequest("A101", 10);
-    System.out.println(testProduct.toString());
+        ProductInfoRequest testRequest = new ProductInfoRequest();
+        Product testProduct = testRequest.productInfoRequest("A101", 10);
+        System.out.println(testProduct.toString());
     }
-
 }
 //    public Product(String productId, int quanity) {
 //        this.productId = productId;

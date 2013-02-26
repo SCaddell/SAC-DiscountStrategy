@@ -5,19 +5,20 @@ package sac.discountstrategy;
  * @author Stuart Caddell
  */
 public class ProductRecord {
+
     private String productRecId;
     private String productRecDescription;
     private double productRecPrice;
     private DiscountStrategy productRecDiscountType;
 
-    public ProductRecord(String prodId, String prodDescription, 
+    public ProductRecord(String prodId, String prodDescription,
             double prodPrice, DiscountStrategy prodDiscntType) {
         productRecId = prodId;
         productRecDescription = prodDescription;
         productRecPrice = prodPrice;
         productRecDiscountType = prodDiscntType;
     }
-    
+
     public String getProductId() {
         return productRecId;
     }

@@ -8,7 +8,7 @@ package sac.discountstrategy;
  *
  * @author Stuart - HP AMD 10
  */
-public interface CustomerInformationRetrieval {
+public interface CustomerInfoRetrieval {
     
     Customer findCustomer(final String custId);
     
