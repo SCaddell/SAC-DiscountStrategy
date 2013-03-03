@@ -5,6 +5,7 @@ package sac.discountstrategy;
  * @author Stuart Caddell
  */
 public class SalesTransaction {
+    private C
 
     // When adding an item to a sale you need to look up the item in the database
     // Here we use the prodId to find product in the above array

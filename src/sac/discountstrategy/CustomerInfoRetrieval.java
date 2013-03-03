@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sac.discountstrategy;
 
 /**
  *
- * @author Stuart - HP AMD 10
+ * @author Stuart Caddell
  */
 public interface CustomerInfoRetrieval {
     
