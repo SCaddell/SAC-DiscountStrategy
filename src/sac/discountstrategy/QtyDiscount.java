@@ -1,5 +1,7 @@
 package sac.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Stuart Caddell
@@ -22,7 +24,10 @@ public class QtyDiscount implements QtyBasedDiscountStrategy {
     public double getDiscount(int qty, double cost) {
         if (qty >= minimumQty)
         {
-            return qty * cost * discountRate;
+            DecimalFormat dollars = new DecimalFormat("0.00");
+            Double discount = 
+                Double.parseDouble((dollars.format(qty * cost * discountRate)));
+            return discount;
         }
         else
         {

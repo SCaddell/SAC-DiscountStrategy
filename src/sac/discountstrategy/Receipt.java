@@ -4,6 +4,8 @@
  */
 package sac.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Stuart - HP AMD 10
@@ -19,17 +21,16 @@ public class Receipt {
     //public void createReceipt(Customer cust, LineItem[] lineItems) {
     public void createReceipt(LineItem[] lineItems) {    
         System.out.println(RECEIPT_HEADING1);
-        
+        DecimalFormat dollars = new DecimalFormat("#00.00");
         for (int sub = 0; sub < lineItems.length; sub++ ) {
-            System.out.println(lineItems[sub].getQuanity() 
-                    + "  " + lineItems[sub].getItemId()
-                    + "  " + lineItems[sub].getItemDescription()
+            System.out.println(lineItems[sub].getItemId()
+                    + "\t" + lineItems[sub].getItemDescription()
                     + "\n"
-                    + "  " + lineItems[sub].getQuanity()
-                    + "  $" + lineItems[sub].getUnitPrice()
-                    + "  $" + lineItems[sub].getOriginalRetailPriceTotal()
-                    + "  $" + lineItems[sub].getDiscount()
-                    + "  $" + lineItems[sub].getNetPrice());
+                    + lineItems[sub].getQuanity()
+                    + "\t$" + dollars.format(lineItems[sub].getUnitPrice())
+                    + "\t$" + dollars.format(lineItems[sub].getOriginalRetailPriceTotal())
+                    + "\n\t\t$" + dollars.format(lineItems[sub].getDiscount())
+                    + "\t$" + dollars.format(lineItems[sub].getNetPrice()));
                     
         }
     }

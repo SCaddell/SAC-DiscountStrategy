@@ -1,5 +1,7 @@
 package sac.discountstrategy;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Stuart Caddell
@@ -17,7 +19,10 @@ public class FixedDiscount implements DiscountStrategy {
     
     @Override
     public double getDiscount(int qty, double cost) {
-            return qty * cost * discountRate;
+        DecimalFormat dollars = new DecimalFormat("0.00");
+        Double discount = 
+                Double.parseDouble((dollars.format(qty * cost * discountRate)));
+        return discount;
     }
 
     @Override
@@ -32,8 +37,8 @@ public class FixedDiscount implements DiscountStrategy {
     
     public static void main(String[] args) {
         FixedDiscount discount = new FixedDiscount();
-        discount.setDiscountRate(.10);
-        System.out.println(discount.getDiscount(5, 10.00));
+        discount.setDiscountRate(.15);
+        System.out.println(discount.getDiscount(5, 19.99));
         
     }
 }
