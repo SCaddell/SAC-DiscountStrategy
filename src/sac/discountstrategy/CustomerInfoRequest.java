@@ -21,6 +21,7 @@ public class CustomerInfoRequest {
             return customerDetails;
         } else {
             // If customer not found, return a null customer
+            System.out.println("Customer Id # " + customerId + " not found.");
             Customer customerDetails = null;
             return customerDetails;
         }
@@ -29,7 +30,7 @@ public class CustomerInfoRequest {
     public static void main(String[] args) {
 
         CustomerInfoRequest testRequest = new CustomerInfoRequest();
-        Customer testCustomer = testRequest.customerInfoRequest("200");
-        System.out.println(testCustomer.toString());
+        Customer testCustomer = testRequest.customerInfoRequest("600");
+        //System.out.println(testCustomer.toString());
     }
 }

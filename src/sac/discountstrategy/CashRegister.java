@@ -7,11 +7,16 @@ package sac.discountstrategy;
 public class CashRegister {
     
     private LineItem[] lineItems = new LineItem[0];
+    SalesTransaction transaction = new SalesTransaction();
     private LineItem newLineItem;
+    private Customer customer = null;
     
-    public void getScannedProductInfo(String prodId, int qty) {
-        SalesTransaction purchasedProduct = new SalesTransaction();
-        newLineItem = purchasedProduct.addItemToSale(prodId, qty);
+    public void lookupCustomer(String customerId) {
+        customer = transaction.getCustomerInfo(customerId);
+    }
+    
+    public void scannedProduct(String prodId, int qty) {
+        newLineItem = transaction.addItemToSale(prodId, qty);
         if (newLineItem != null) {
             addToLineItem(newLineItem);
         }
@@ -23,7 +28,7 @@ public class CashRegister {
     
     public void endTransaction() {
         Receipt salesReceipt = new Receipt();
-        salesReceipt.createReceipt(lineItems);
+        salesReceipt.createReceipt(customer, lineItems);
     }
     
     /*

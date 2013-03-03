@@ -5,7 +5,12 @@ package sac.discountstrategy;
  * @author Stuart Caddell
  */
 public class SalesTransaction {
-    private C
+    
+    public Customer getCustomerInfo(String customerId) {
+        CustomerInfoRequest nextCustomer = new CustomerInfoRequest();
+        Customer customer = nextCustomer.customerInfoRequest(customerId);
+        return customer;
+    }
 
     // When adding an item to a sale you need to look up the item in the database
     // Here we use the prodId to find product in the above array
@@ -38,7 +43,7 @@ public class SalesTransaction {
         lineItem.setDiscount(product.getDiscount());
         lineItem.setNetPrice(product.getNetPrice());
         // Comment out or delete the line below after testing
-        System.out.println(lineItem.getItemDescription());
+        // System.out.println(lineItem.getItemDescription());
         return lineItem;
     }
 

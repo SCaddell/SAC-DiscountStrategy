@@ -10,10 +10,9 @@ public class StartUp {
     public static void main(String[] args) {
         
         CashRegister newRegisterTransaction = new CashRegister();  
-        newRegisterTransaction.getScannedProductInfo("A101", 2);
-        newRegisterTransaction.getScannedProductInfo("A101", 2);
+        newRegisterTransaction.lookupCustomer("200");
+        newRegisterTransaction.scannedProduct("A101", 2);
+        newRegisterTransaction.scannedProduct("A101", 2);
         newRegisterTransaction.endTransaction();
-//        //System.out.println(newRegisterTransaction.getScannedProductInfo("A101", 5));
-          System.out.println("test");
     }  
 }

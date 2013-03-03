@@ -31,6 +31,7 @@ public class ProductInfoRequest {
             return productDetails;
         } else {
             // If product not found, return a null product
+            System.out.println("Product Id # " + productId + " not found.");
             Product productDetails = null;
             return productDetails;
         }

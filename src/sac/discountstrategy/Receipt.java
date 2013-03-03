@@ -19,7 +19,8 @@ public class Receipt {
     //public Receipt(String customer, LineItem[] lineItems)
     
     //public void createReceipt(Customer cust, LineItem[] lineItems) {
-    public void createReceipt(LineItem[] lineItems) {    
+    public void createReceipt(Customer customer, LineItem[] lineItems) {    
+        System.out.println(customer.getCustomerName());
         System.out.println(RECEIPT_HEADING1);
         DecimalFormat dollars = new DecimalFormat("#00.00");
         for (int sub = 0; sub < lineItems.length; sub++ ) {
