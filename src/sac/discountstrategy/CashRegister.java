@@ -13,7 +13,7 @@ public class CashRegister {
         SalesTransaction purchasedProduct = new SalesTransaction();
         newLineItem = purchasedProduct.addItemToSale(prodId, qty);
         if (newLineItem != null) {
-            addToLineItem(lineItems, newLineItem);
+            addToLineItem(newLineItem);
         }
         else {
             System.out.println("The price and product information for " 
@@ -21,14 +21,18 @@ public class CashRegister {
         }
     }
     
+    public void endTransaction() {
+        Receipt salesReceipt = new Receipt();
+        salesReceipt.createReceipt(lineItems);
+    }
+    
     /*
      * Increase the size of the LineItem array by 1, and add the new line item
      */
-    private void addToLineItem(LineItem[] lineItems, LineItem newLineItem) {
+    private void addToLineItem(LineItem newLineItem) {
         LineItem[] tempItems = new LineItem[lineItems.length + 1];
         System.arraycopy(lineItems, 0, tempItems, 0, lineItems.length);
         tempItems[lineItems.length] = newLineItem;
         lineItems = tempItems;
     }
-    
 }

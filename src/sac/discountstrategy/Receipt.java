@@ -16,7 +16,8 @@ public class Receipt {
             = "Thank you for shopping at Lombardo's\n";
     //public Receipt(String customer, LineItem[] lineItems)
     
-    public void createReceipt(Customer cust, LineItem[] lineItems) {
+    //public void createReceipt(Customer cust, LineItem[] lineItems) {
+    public void createReceipt(LineItem[] lineItems) {    
         System.out.println(RECEIPT_HEADING1);
         
         for (int sub = 0; sub < lineItems.length; sub++ ) {
