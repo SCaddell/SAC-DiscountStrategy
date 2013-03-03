@@ -8,8 +8,13 @@ public class Customer {
     private String customerId;
     private String customerName;
     
-    public Customer(String custID, String custName) {
-        customerId = custID;
+    public Customer(String custId) {
+        customerId = custId;
+        customerName = null;
+    }
+    
+    public Customer(String custId, String custName) {
+        customerId = custId;
         customerName = custName;
     }
 
@@ -27,6 +32,13 @@ public class Customer {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+    
+    @Override
+    public String toString() {
+        String toStringInfo = "customerId = " + customerId
+                + "\ncustomerName = " + customerName;
+        return toStringInfo;
     }
     
 }

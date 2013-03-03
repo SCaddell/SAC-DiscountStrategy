@@ -6,6 +6,6 @@ package sac.discountstrategy;
  */
 public interface CustomerInfoRetrieval {
     
-    Customer findCustomer(final String custId);
+    CustomerRecord findCustomer(final String custId);
     
 }

@@ -7,10 +7,10 @@ package sac.discountstrategy;
 public class FakeDatabase implements ProductInfoRetrieval,
         CustomerInfoRetrieval {
 
-    private Customer[] customers = {
-        new Customer("100", "John Smith"),
-        new Customer("200", "Sally Jones"),
-        new Customer("300", "Bob Clementi")
+    private CustomerRecord[] customers = {
+        new CustomerRecord("100", "John Smith"),
+        new CustomerRecord("200", "Sally Jones"),
+        new CustomerRecord("300", "Bob Clementi")
     };
     // Notice we assign a default discount strategy component object to each product
     ProductRecord[] products = {
@@ -22,11 +22,11 @@ public class FakeDatabase implements ProductInfoRetrieval,
     // Just call this method to find a customer in the array by its id.
     // Returns null if not found.
     @Override
-    public final Customer findCustomer(final String custId) {
+    public final CustomerRecord findCustomer(final String custId) {
         // validation is needed
-        Customer customer = null;
-        for (Customer c : customers) {
-            if (custId.equals(c.getCustomerId())) {
+        CustomerRecord customer = null;
+        for (CustomerRecord c : customers) {
+            if (custId.equals(c.getCustomerRecId())) {
                 customer = c;
                 break;
             }
