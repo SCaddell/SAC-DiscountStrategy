@@ -1,20 +1,33 @@
 package sac.discountstrategy;
 
 /**
- *
+ * CashRegister for Discount Strategy
+ * uses SalesTransaction and Receipt classes
  * @author Stuart Caddell
  */
 public class CashRegister {
     
     private LineItem[] lineItems = new LineItem[0];
+    
+    // SalesTransaction could have a Transaction strategy created for Sales, 
+    // Returns, and Exchanges. 
     SalesTransaction transaction = new SalesTransaction();
     private LineItem newLineItem;
     private Customer customer = null;
     
+    /**
+     * method for looking up the customer name (and information)  
+     * @param customerId 
+     */
     public void lookupCustomer(String customerId) {
         customer = transaction.getCustomerInfo(customerId);
     }
     
+    /**
+     * method used when products are scanned or entered to be purchased
+     * @param prodId
+     * @param qty 
+     */
     public void scannedProduct(String prodId, int qty) {
         newLineItem = transaction.addItemToSale(prodId, qty);
         if (newLineItem != null) {
@@ -26,6 +39,9 @@ public class CashRegister {
         }
     }
     
+    /**
+     * method to end the transaction, and create a receipt
+     */
     public void endTransaction() {
         Receipt salesReceipt = new Receipt();
         salesReceipt.createReceipt(customer, lineItems);

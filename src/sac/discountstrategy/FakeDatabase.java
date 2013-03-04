@@ -16,7 +16,8 @@ public class FakeDatabase implements ProductInfoRetrieval,
     ProductRecord[] products = {
         new ProductRecord("A101", "Baseball Hat", 19.95, new FixedDiscount(0.15)),
         new ProductRecord("B205", "Men's Dress Shirt", 35.50, new QtyDiscount(.10, 5)),
-        new ProductRecord("C222", "Women's Socks", 9.50, new NoDiscount())
+        new ProductRecord("C222", "Women's Socks", 9.50, new NoDiscount()),
+        new ProductRecord("P001", "Green Bay Packers Jersey", 49.99, new NoDiscount())
     };
 
     // Just call this method to find a customer in the array by its id.
