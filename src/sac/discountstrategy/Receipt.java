@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package sac.discountstrategy;
 
 import java.text.DecimalFormat;
@@ -10,8 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- *
- * @author Stuart - HP AMD 10
+ * Generates a fixed format receipt at the end of a customer transaction
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class Receipt {
     

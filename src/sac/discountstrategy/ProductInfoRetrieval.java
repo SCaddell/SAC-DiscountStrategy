@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Interface for retrieving the ProductRecord from the current data storage 
+ * system.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public interface ProductInfoRetrieval {
 

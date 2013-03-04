@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Product Class contains a combination of ProductRecord and calculated
+ * data from the ProductRecord.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class Product {
 

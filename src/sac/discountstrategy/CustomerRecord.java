@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * CustomerRecord, layout for the physical data record record.
+ * The actual CustomerRecord may contain more fields that is used in the 
+ * Customer class of the DiscountStrategy.
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class CustomerRecord {
     

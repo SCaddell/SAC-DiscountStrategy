@@ -1,8 +1,8 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Customer Class for Discount Strategy
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class Customer {
     private String customerId;

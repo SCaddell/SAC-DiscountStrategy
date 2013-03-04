@@ -1,8 +1,11 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * NoDiscount implements DiscountStrategy
+ * Used for DiscountStrategy when the product has no discount
+ * Always returns zero as discount.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class NoDiscount implements DiscountStrategy {
     private double discountRate = 0.00;
@@ -22,10 +25,11 @@ public class NoDiscount implements DiscountStrategy {
         this.discountRate = discountRate;
     }
     
-    public static void main(String[] args) {
-        DiscountStrategy discount = new NoDiscount();
-        discount.setDiscountRate(.10);
-        System.out.println(discount.getDiscount(5, 10.00));
-        
-    }
+//    UNIT TEST CODE    
+//    public static void main(String[] args) {
+//        DiscountStrategy discount = new NoDiscount();
+//        discount.setDiscountRate(.10);
+//        System.out.println(discount.getDiscount(5, 10.00));
+//        
+//    }
 }

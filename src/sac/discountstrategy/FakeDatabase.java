@@ -1,8 +1,9 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * The "data storage system" currently used to retain Product and Customer 
+ * data.
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class FakeDatabase implements ProductInfoRetrieval,
         CustomerInfoRetrieval {
@@ -20,8 +21,12 @@ public class FakeDatabase implements ProductInfoRetrieval,
         new ProductRecord("P001", "Green Bay Packers Jersey", 49.99, new NoDiscount())
     };
 
-    // Just call this method to find a customer in the array by its id.
-    // Returns null if not found.
+    /**
+     * Call this method to find a customer on the data storage.
+     * Returns null if not found.
+     * @param custId
+     * @return 
+     */
     @Override
     public final CustomerRecord findCustomer(final String custId) {
         // validation is needed
@@ -35,9 +40,13 @@ public class FakeDatabase implements ProductInfoRetrieval,
 
         return customer;
     }
-
-    // Just call this method to find a product in the array by its id.
-    // Returns null if not found.
+    
+    /**
+     * Just call this method to find a product in the array by its id.
+     * Returns null if not found.
+     * @param productId
+     * @return 
+     */
     @Override
     public final ProductRecord findProduct(final String productId) {
         // validation is needed
@@ -51,16 +60,16 @@ public class FakeDatabase implements ProductInfoRetrieval,
 
         return product;
     }
-
-    public static void main(String[] args) {
-        ProductInfoRetrieval db = new FakeDatabase();
-        ProductRecord product = db.findProduct("A101");
-
-        // if found, add the lineItem to the receipt
-        // but it's the receipt's job to do this!
-        if (product != null) {
-            //receipt.addLineItem(product, qty);
-            System.out.println(product);
-        }
-    }
-} // end of class
+//    CODE TO UNIT TEST THE CLASS
+//    public static void main(String[] args) {
+//        ProductInfoRetrieval db = new FakeDatabase();
+//        ProductRecord product = db.findProduct("A101");
+//
+//        // if found, add the lineItem to the receipt
+//        // but it's the receipt's job to do this!
+//        if (product != null) {
+//            //receipt.addLineItem(product, qty);
+//            System.out.println(product);
+//        }
+//    }
+}

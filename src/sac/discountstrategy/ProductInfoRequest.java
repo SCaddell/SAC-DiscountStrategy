@@ -1,8 +1,11 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * ProductInfoRequest uses the ProductInfoRetrieval to get the ProductRecord
+ * for the current data storage system.  It then uses the ProductRecord data
+ * to populate the Product class thru 1-to-1 sets, or thru data calculations.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class ProductInfoRequest {
 
@@ -37,10 +40,11 @@ public class ProductInfoRequest {
         }
     }
 
-    public static void main(String[] args) {
-
-        ProductInfoRequest testRequest = new ProductInfoRequest();
-        Product testProduct = testRequest.productInfoRequest("A101", 10);
-        System.out.println(testProduct.toString());
-    }
+//    //UNIT TEST CODE
+//    public static void main(String[] args) {
+//
+//        ProductInfoRequest testRequest = new ProductInfoRequest();
+//        Product testProduct = testRequest.productInfoRequest("A101", 10);
+//        System.out.println(testProduct.toString());
+//    }
 }

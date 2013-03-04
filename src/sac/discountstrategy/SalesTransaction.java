@@ -1,8 +1,11 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Transaction driver for a Sales transaction (transactions could be turned
+ * into a strategy for Sales, Returns, and Exchanges.)
+ * It is used to get the customer info, and add items to the sale.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class SalesTransaction {
     
@@ -47,8 +50,9 @@ public class SalesTransaction {
         return lineItem;
     }
 
-    public static void main(String[] args) {
-        SalesTransaction transaction = new SalesTransaction();
-        transaction.addItemToSale("A101", 2);
-    }
+//    // UNIT TEST CODE
+//    public static void main(String[] args) {
+//        SalesTransaction transaction = new SalesTransaction();
+//        transaction.addItemToSale("A101", 2);
+//    }
 }

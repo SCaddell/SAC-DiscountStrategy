@@ -1,8 +1,8 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * LineItem contains the transaction items that will be displayed on the receipt
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class LineItem {
     private int quanity;                        // number of items purchased

@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Physical layout of the product data on the current product database or 
+ * storage system.
+ * 
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class ProductRecord {
 

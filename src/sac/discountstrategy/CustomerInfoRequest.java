@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * CustomerInfoRequest populates appropriate data from the CustomerRecord
+ * to the Customer Class
+ * used for Discount Strategy
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class CustomerInfoRequest {
 

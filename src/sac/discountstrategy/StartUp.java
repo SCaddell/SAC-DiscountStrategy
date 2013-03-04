@@ -1,12 +1,12 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * DiscountStrategy driver.
+ * Provides customer and products purchased info to the CashRegister.
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class StartUp {
     
-    //private CashRegister newRegisterTransaction = new CashRegister();
     public static void main(String[] args) {
         
         CashRegister newRegisterTransaction = new CashRegister();  

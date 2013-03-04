@@ -3,8 +3,10 @@ package sac.discountstrategy;
 import java.text.DecimalFormat;
 
 /**
- *
- * @author Stuart Caddell
+ * QtyDiscount implements QtyBasedDiscountStrategy
+ * Used to calculate discount based on the condition of x number of items
+ * purchased.
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public class QtyDiscount implements QtyBasedDiscountStrategy {
     private double discountRate = 0.00;
@@ -54,10 +56,11 @@ public class QtyDiscount implements QtyBasedDiscountStrategy {
         this.minimumQty = minimumQty;
     }
     
-    public static void main(String[] args) {
-        DiscountStrategy discount = new QtyDiscount();
-        discount.setDiscountRate(.20);
-        System.out.println(discount.getDiscount(5, 10.00));
-    }
+//    // UNIT TEST CODE
+//    public static void main(String[] args) {
+//        DiscountStrategy discount = new QtyDiscount();
+//        discount.setDiscountRate(.20);
+//        System.out.println(discount.getDiscount(5, 10.00));
+//    }
     
 }

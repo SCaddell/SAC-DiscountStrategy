@@ -3,7 +3,7 @@ package sac.discountstrategy;
 /**
  * CashRegister for Discount Strategy
  * uses SalesTransaction and Receipt classes
- * @author Stuart Caddell
+ * @author Stuart Caddell, scaddell@my.wctc.edu
  */
 public class CashRegister {
     

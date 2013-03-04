@@ -1,8 +1,10 @@
 package sac.discountstrategy;
 
 /**
- *
- * @author Stuart Caddell
+ * Interface for retrieving the CustomerRecord from the current data storage
+ * system.
+ * Used for the DiscountStrategy
+ * @author Stuart Caddell, scaddell@my.wctc.edu 
  */
 public interface CustomerInfoRetrieval {
     
