@@ -49,13 +49,14 @@ public class Receipt {
         }
         calculateTotals(lineItems);
         if (totals[1] > 0) {
-            System.out.println("\nOriginal Total\t\t" + totals[0]);
-            System.out.println("Your discounts today\t" + totals[1]);
-            System.out.println("Total Due \t\t" + totals[2]);
+            System.out.printf("\nOriginal Total\t\t%3.2f", totals[0]);
+            System.out.printf("\nYour discounts today\t%3.2f", totals[1]);
+            System.out.printf("\nTotal Due \t\t%3.2f", totals[2]);
         }
         else {
-            System.out.println("Total Due \t\t" + totals[2]);
+            System.out.printf("\nTotal Due \t\t%3.2f", totals[2]);
         }
+        System.out.println("");
         
         // Get current date/time and convert to a Date object because
         // SimpleDateFormat only works with Date objects
