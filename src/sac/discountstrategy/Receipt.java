@@ -28,27 +28,26 @@ public class Receipt {
         System.out.println(RECEIPT_HEADING1);
         DecimalFormat dollars = new DecimalFormat("##0.00");
         for (int sub = 0; sub < lineItems.length; sub++ ) {
-//            System.out.println(lineItems[sub].getItemId()
-//                    + "\t" + lineItems[sub].getItemDescription()
-//                    + "\n"
-//                    + lineItems[sub].getQuanity()
-//                    + "\t$" + dollars.format(lineItems[sub].getUnitPrice())
-//                    + "\t$" + dollars.format(lineItems[sub].getOriginalRetailPriceTotal())
-//                    + "\n\t\t$" + dollars.format(lineItems[sub].getDiscount())
-//                    + "\t$" + dollars.format(lineItems[sub].getNetPrice()));
-//            System.out.println("************************");
             System.out.println(lineItems[sub].getItemId()
                     + "\t" + lineItems[sub].getItemDescription());
             System.out.print(lineItems[sub].getQuanity());
-            System.out.printf("\t%3.2f", lineItems[sub].getUnitPrice());
+            if (lineItems[sub].getQuanity() > 1) {
+                System.out.printf("\t%3.2f", lineItems[sub].getUnitPrice());
+            }
+            else {  // tab over 1 spot to skip over unit price line item spot
+                System.out.print("\t");
+            }
             System.out.printf("\t%3.2f", 
                     lineItems[sub].getOriginalRetailPriceTotal());
-            System.out.printf("\n    discount\t%3.2f", lineItems[sub].getDiscount());
-            System.out.printf("\t%3.2f", lineItems[sub].getNetPrice());
+            if (lineItems[sub].getDiscount() >= 0.01) {
+                System.out.printf("\n    discount\t%3.2f", 
+                        lineItems[sub].getDiscount());
+                System.out.printf("\t%3.2f", lineItems[sub].getNetPrice());
+            }
             System.out.println("");
         }
         calculateTotals(lineItems);
-        if (totals[1] > 0) {
+        if (totals[1] > 0) {    // discount total >= 0.01
             System.out.printf("\nOriginal Total\t\t%3.2f", totals[0]);
             System.out.printf("\nYour discounts today\t%3.2f", totals[1]);
             System.out.printf("\nTotal Due \t\t%3.2f", totals[2]);
